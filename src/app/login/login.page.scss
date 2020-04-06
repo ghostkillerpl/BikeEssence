@@ -1,0 +1,23 @@
+ion-content.background{
+    --background: url(../../assets/img/tło3.png) 0 0/100% 100% no-repeat;
+}
+.my-menu .item, .my-menu .item-content, .my-menu .item-complex{
+    background-color: rgba(0,0,0,0);
+    color: #FFFFFF;
+    }
+img
+{
+    margin-top: 8px;
+}    
+ion-item {
+    --ion-background-color: transparent!important;
+}
+.padding1{
+    padding: 2.78%;
+    margin-top: 13vh;
+}
+.padding2{
+    padding: 5%;
+    margin-top: 3vh;
+}
+

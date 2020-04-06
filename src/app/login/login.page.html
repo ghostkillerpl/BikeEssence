@@ -1,0 +1,32 @@
+<ion-content padding class="background">
+  
+          <div padding-horizontal margin-bottom text-center class="animated fadeInDown" style="margin-bottom: 20px">
+          <img src="assets/img/logo.png" style="height: 180px">
+        </div>
+
+<div class = "padding1" >
+
+  <ion-item>
+    <ion-label color= "dark" position="floating">Email</ion-label>
+    <ion-input color="dark" [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-label position="floating">Hasło</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+
+</div>
+
+  <div class = "padding2" >
+    
+    <ion-button expand="block" shape="round" (click)="loginClick()" >Zaloguj</ion-button>
+    <ion-button expand="block" shape="round" (click)="formRegister()">Zarejestruj</ion-button>
+    <ion-button expand="block" shape="round" (click)="loginWithGoogle()" >Zaloguj przez Google</ion-button>
+    <ion-button expand="block" shape="round" (click)="loginWithFacebook()" >Zaloguj przez Facebook</ion-button>
+
+    
+  </div>
+
+</ion-content>
