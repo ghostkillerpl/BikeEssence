@@ -1,96 +1,106 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { NavController, MenuController, ToastController, AlertController, LoadingController, Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
-import { PostProvider } from '../../providers/post-provider';
-import { async } from 'q';
 
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+selector: 'app-register',
+templateUrl: './register.page.html',
+styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage {
+export class RegisterPage implements OnInit {
+	public onLoginForm: FormGroup;
+	userData = null;
+	show = false;
 
- full_name: string = '';
- phone_number: string = '';
- username: string = '';
- password: string = '';
- confirm_password: string = '';
+	constructor(
+	public navCtrl: NavController,
+	public menuCtrl: MenuController,
+	public toastCtrl: ToastController,
+	public alertCtrl: AlertController,
+	public loadingCtrl: LoadingController,
+	private formBuilder: FormBuilder,
+	private storage: Storage,
+	private auth: AuthService,
+	private router: Router,
+	private platform: Platform
+	) {
+		this.auth.authenticationState.subscribe(state => {
+			if (state) {
+				this.show = false;
+			} else {
+				this.show = true;
+			}
+		});
 
-  constructor(
-    private router: Router,
-    public toastController: ToastController,
-    private postPvdr: PostProvider,
-    ) { }
+	}
 
-  ngOnInit() {
+	ionViewWillEnter() {
+		this.menuCtrl.enable(false);
+	}
 
-  }
+	ngOnInit() {
+		this.onLoginForm = this.formBuilder.group({
+			'check': [null, this.mustBeTruthy],
+			'email': [null, Validators.compose([
+				Validators.required,
+				Validators.email
+			])],
+			'password': [null, Validators.compose([
+				Validators.required
+      		])]
+		});
+	}
 
-  formLogin() {
-    this.router.navigate(['/login']);
-  }
+	mustBeTruthy(c: AbstractControl): { [key: string]: boolean } {
+		let rv: { [key: string]: boolean } = {};
+		if (!c.value) {
+		  rv['notChecked'] = true;
+		}
+		return rv;
+	}
 
-  async addRegister() {
-    if (this.full_name == '') {
-      const toast = await this.toastController.create({
-      message: 'Fullname is required',
-      duration: 2000
-      });
-      toast.present();
-    } else if (this.phone_number == '') {
-      const toast = await this.toastController.create({
-        message: 'Phone number is required',
-        duration: 2000
-        });
-      toast.present();
-    } else if (this.username == '') {
-      const toast = await this.toastController.create({
-        message: 'Username is required',
-        duration: 2000
-        });
-      toast.present();
-
-    } else if (this.password == '') {
-      const toast = await this.toastController.create({
-        message: 'Password is required',
-        duration: 2000
-        });
-      toast.present();
-
-    } else if (this.password != this.confirm_password) {
-      const toast = await this.toastController.create({
-        message: 'Password does not match',
-        duration: 2000
-        });
-      toast.present();
-    } else {
-      let body = {
-        full_name: this.full_name,
-        phone_number: this.phone_number,
-        username: this.username,
-        password: this.password,
-        aksi: 'add_register'
-      };
-      this.postPvdr.postData(body, 'file_aksi.php').subscribe(async data => {
-       var alertpesan = data.msg;
-       if (data.success) {
-         this.router.navigate(['/login']);
-         const toast = await this.toastController.create({
-          message: 'Register successfully',
-          duration: 2000
-         });
-         toast.present();
-       } else {
-         const toast = await this.toastController.create({
-           message: alertpesan,
-           duration: 2000
-         });
-       }
-     });
-
+	goToLogin() {
+    // this.navCtrl.navigateRoot('');
+    this.router.navigate([''], {replaceUrl: true});
     }
+  
+    registerClick() {
+      this.auth.register(this.onLoginForm.value.email, this.onLoginForm.value.password).subscribe(
+        (data) => {
+          if (data === 0) {
+            this.presentSuccessAlert();
+          }
+          if (data === -1) {
+            this.presentErrorAlert();
+          }
+      },
+      err => {
+        this.presentErrorAlert();
+      });
+    }
+
+  async presentSuccessAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Dziękujemy!',
+      subHeader: 'W ciągu 5 minut otrzymasz e-mail, w którym potwierdzisz założenie konta',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async presentErrorAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Błąd',
+      subHeader: 'Uzytkownik o podanym adresie email już istnieje',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }

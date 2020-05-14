@@ -1,27 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>BikeEssence</ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false" menuToggle></ion-menu-button>
+        </ion-buttons>
+      <ion-title>
+       BikeEssence
+      </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1_XM9HijQ5qjPiFXB6iHpHPwLCdyuItGj" width="640" height="500"></iframe>
+
 <ion-content>
-  
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="schedule">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>Harmonogram</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="map">
-        <ion-icon name="map"></ion-icon>
-        <ion-label>Mapa</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="about">
-        <ion-icon name="information-circle"></ion-icon>
-        <ion-label>Informacje</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+
+      <div text-center margin-top style="margin-top: 9%;">
+        <ion-text margin text-center tappable (click)="Tabs()" color="primary" style="border-bottom: solid #596063 2px; padding: 6px; font-size: 15px;">
+          <strong><ion-icon size="default" name="home"></ion-icon>Powrót do strony głownej</strong>
+        </ion-text>
+      </div>
+
 </ion-content>

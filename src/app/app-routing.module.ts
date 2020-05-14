@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'showcustomer/:id/:name/:desc', loadChildren: './showcustomer/showcustomer.module#ShowcustomerPageModule' },
   { path: 'updatecustomer/:id/:name/:desc', loadChildren: './updatecustomer/updatecustomer.module#UpdatecustomerPageModule' },
   { path: 'home1', loadChildren: './home1/home1.module#Home1PageModule' },
+  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
 ];
 
 @NgModule({

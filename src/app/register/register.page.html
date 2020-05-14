@@ -1,48 +1,73 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Register</ion-title>
-        <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-        </ion-buttons>
-      </ion-toolbar>
-</ion-header>
+<ion-content padding class="animated fadeIn login auth-page">
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <div class="auth-content">
 
-<ion-content padding>
-    <ion-list>
+        <!-- Login form -->
+        <form [formGroup]="onLoginForm" class="list-form">
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-label position="floating">
+              <ion-icon name="mail" item-start color="primary"></ion-icon>
+              <span class="field">Email</span>
+            </ion-label>
+            <ion-input color="primary" type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <!-- <p ion-text class="primary" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+            <ion-text color="primary">
+              Pole wymagane
+            </ion-text>
+          </p> -->
 
-      <ion-item>
-        <ion-label position="floating"> Fullname </ion-label>
-        <ion-input type="text" [(ngModel)]="full_name"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label position="floating"> Phone Number </ion-label>
-        <ion-input type="text" [(ngModel)]="phone_number"></ion-input>
-      </ion-item>
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-label color="primary" position="floating">
+              <ion-icon name="lock" item-start color="primary"></ion-icon>
+              <span class="field">Hasło</span>
+            </ion-label>
+            <ion-input color="primary" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item no-padding lines="none" class="no-click">
+            <span style="color: red; font-size:20px; margin-right: 3px">*</span><span class="rules">Akceptuję <a target="_blank" href="http://foodiniapp.pl/regulamin-i-polityka-prywatnosci/">regulamin aplikacji</a> oraz <a target="_blank" href="http://foodiniapp.pl/regulamin-i-polityka-prywatnosci/">politykę prywatności</a></span>
+            <ion-checkbox mode="ios" color="primary" slot="start" formControlName="check"></ion-checkbox>
+          </ion-item>
+        
+        </form>
 
-      <ion-item>
-        <ion-label position="floating"> Username </ion-label>
-        <ion-input type="text" [(ngModel)]="username"></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label position="floating"> Password </ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
-      </ion-item>
+        <div margin-top margin-bottom style="margin-top: 40px;">
+          <ion-button fill="outline" icon-left size="medium" expand="full" shape="round" color="primary" (click)="registerClick()" [disabled]="!onLoginForm.valid" tappable>
+            <span class="action_button">Załóż Konto</span>
+          </ion-button>
+<!-- 
+          <p text-center>
+            <ion-text color="primary">
+              lub
+            </ion-text>
+          </p>
 
-      <ion-item>
-        <ion-label position="floating"> Confirm Password </ion-label>
-        <ion-input type="password" [(ngModel)]="confirm_password"></ion-input>
-      </ion-item>
-    
-    </ion-list>
-  
-    <div padding>
-      <ion-button expand="block" shape="round" (click)="addRegister()">Submit</ion-button>
-      <ion-button expand="block" shape="round" (click)="formLogin()">Sign In</ion-button>
-    </div>
-  
-  </ion-content>
+          <ion-button shape="round" expand="full" color="facebook" (click)='loginWithFacebook()'>
+            Zaloguj się przez Facebook
+          </ion-button> -->
+        </div>
 
+        <!-- Other links -->
+        <div text-center margin-top style="margin-top:20px;">
+            <ion-text margin text-center tappable (click)="goToLogin()" color="primary" style="border-bottom: solid #5c2383 2px; padding: 6px; font-size: 13px;">
+              <strong>Wróć do logowania</strong>
+            </ion-text>
+        </div>
 
+        <!-- <div text-center margin-top *ngIf='userData'>
+          <ion-card>
+            <ion-card-header>{{ userData.username }}</ion-card-header>
+            <img [src]="userData.picture" />
+            <ion-card-content>
+              <p>Email: {{ userData.email }}</p>
+              <p>First Name: {{ userData.first_name }}</p>
+              <p>Unique ID: {{ userData.id }}</p>
+            </ion-card-content>
+          </ion-card>
+        </div> -->
 
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

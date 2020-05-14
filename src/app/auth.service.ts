@@ -56,7 +56,7 @@ export class AuthService {
 						this.storage.set('password', password);
 						localStorage.setItem('token', data['access_token']); //nie dało się inaczej wkleić tokena do headera w requestach :P
             this.authenticationState.next(true);
-            this.router.navigate(['/home1'], {replaceUrl: true});
+            this.router.navigate(['/tabs'], {replaceUrl: true});
 					});
 				}
 			},
@@ -64,6 +64,13 @@ export class AuthService {
 				this.presentAlert('Błąd', 'Adres email, lub hasło jest niepoprawne.');
 			});
   }
+  register(username, password) {
+		const post_data = new HttpParams()
+			.set('name', username)
+			.set('email', username)
+			.set('password', password);
+		return this.http.post('http://localhost/auth-api/registerEmail', post_data, this.httpOptions);
+	}
   
   async presentAlert(header, message) {
 		const alert = await this.alertCtrl.create({
@@ -75,6 +82,19 @@ export class AuthService {
 		await alert.present();
   }
   
+  logout() {
+	return this.storage.remove(TOKEN_KEY).then(() => {
+		return this.storage.remove('email').then(() => {
+			return this.storage.remove('password').then(() => {
+				localStorage.removeItem('token');
+				localStorage.removeItem('user_status');
+				this.authenticationState.next(false);
+			});
+		});
+	});
+
+}
+
   isAuthenticated() {
 		return this.authenticationState.value;
 	}

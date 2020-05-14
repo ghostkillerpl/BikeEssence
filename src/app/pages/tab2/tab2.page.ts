@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home1',
-  templateUrl: './home1.page.html',
-  styleUrls: ['./home1.page.scss'],
+  selector: 'app-tab2',
+  templateUrl: './tab2.page.html',
+  styleUrls: ['./tab2.page.scss'],
 })
-export class Home1Page implements OnInit {
+export class Tab2Page implements OnInit {
 
   constructor(
     private router: Router,
@@ -14,8 +14,9 @@ export class Home1Page implements OnInit {
 
   ngOnInit() {
   }
-  Tabs() {
-    this.router.navigate(['/tabs']);
+  Bolko() {
+    this.router.navigate(['/home1']);
   }
 
 }
+

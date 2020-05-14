@@ -28,6 +28,10 @@ export class LoginPage implements OnInit {
 
   }
 
+  formRegister() {
+    this.router.navigate(['/register']);
+  }
+
   loginClick() {
 		this.auth.login(this.username, this.password);
   }
