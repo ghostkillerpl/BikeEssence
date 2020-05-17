@@ -1,0 +1,19 @@
+ion-content {
+    --background: url('/assets/img/tło6.png') 0 0/100% 100% no-repeat;
+    
+}
+.bg-transparent {
+    background: transparent;
+  }
+  ion-item {
+    --background: rgba(0,0,0,0);
+}
+h3
+{
+    color: rgb(19, 74, 99);
+    font-weight: 700;
+}
+p
+{
+  font-weight: 600;
+}
