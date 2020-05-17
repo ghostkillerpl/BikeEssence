@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-regulamin',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegulaminPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    ) { }
+
+    Login() {
+      this.router.navigate(['/']);
+    }
 
   ngOnInit() {
   }
