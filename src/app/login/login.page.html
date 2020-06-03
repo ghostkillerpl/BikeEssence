@@ -16,17 +16,16 @@
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
-
 </div>
 
-  <div class = "padding2" >
-    
-    <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="loginClick()" >Zaloguj</ion-button>
-    <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="formRegister()">Zarejestruj</ion-button>
-    <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="loginWithGoogle()" ><ion-icon slot="end" name="logo-google"></ion-icon>Zaloguj przez Google</ion-button>
-    <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="loginWithFacebook()" ><ion-icon slot="end" name="logo-facebook"></ion-icon>Zaloguj przez Facebook</ion-button>
+<div class = "padding2" >
+  
+  <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="loginClick()" >Zaloguj</ion-button>
+  <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="formRegister()">Zarejestruj</ion-button>
+  <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="loginAsGuest()" >Zaloguj jako gość</ion-button>
+  <ion-button expand="block" shape="round" style=" margin-bottom: 12px;" (click)="loginWithFacebook()" ><ion-icon slot="end" name="logo-facebook"></ion-icon>Zaloguj przez Facebook</ion-button>
 
-    
-  </div>
+  
+</div>
 
 </ion-content>

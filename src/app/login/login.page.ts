@@ -28,6 +28,9 @@ export class LoginPage implements OnInit {
 
   }
 
+  loginAsGuest() {
+		this.router.navigate(['/tabs']);
+  }
   formRegister() {
     this.router.navigate(['/register']);
   }
