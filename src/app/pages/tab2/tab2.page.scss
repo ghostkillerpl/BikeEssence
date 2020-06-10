@@ -1,12 +1,12 @@
-ion-content {
-    --background: url('/assets/img/tło8.png') 0 0/100% 100% no-repeat;
-    
-}
+// ion-content {
+//   --background: url('/assets/img/tło8.png') 0 0/100% 100% no-repeat;
+  
+// }
 .bg-transparent {
-    background: transparent;
-  }
-  ion-item {
-    --background: rgba(0,0,0,0);
+  background: transparent;
+}
+ion-item {
+  --background: rgba(0,0,0,0);
 }
 h3
 {
@@ -16,4 +16,15 @@ h3
 p
 {
   font-weight: 600;
+}
+ion-label{
+  background-color: blur(10px);
+  font-weight: 700;
+}
+ion-item-divider{
+  background-color: rgb(19, 74, 99);;
+}
+h4{
+  color: white;
+  font-weight: 500;
 }
