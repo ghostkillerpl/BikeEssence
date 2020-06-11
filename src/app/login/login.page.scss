@@ -1,5 +1,5 @@
 ion-content.background{
-    --background: url(../../assets/img/tło3.png) 0 0/100% 100% no-repeat;
+    --background: url(../../assets/img/tło5.png) 0 0/100% 100% no-repeat;
 }
 .my-menu .item, .my-menu .item-content, .my-menu .item-complex{
     background-color: rgba(0,0,0,0);
@@ -20,4 +20,8 @@ ion-item {
     padding: 5%;
     margin-top: 4vh;
 }
-
+p{
+    font-size: 14px;
+    border: 0 0 0 0;
+    color: black;
+}
