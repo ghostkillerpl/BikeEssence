@@ -11,7 +11,7 @@ $body .= "Nazwisko: " + $surname . "\n";
 $body .= "Wiadomość: " + $message . "\n";
 $body .= "Telefon: " + $telephone . "\n";
 
-mail("mrjanek1998@wp.pl", "Mail ze strony internetowej DOM", $body);
+mail("ryszard@uslugibudowlane.opole.pl", "Mail ze strony internetowej DOM", $body);
 ?>
 <head>
     
