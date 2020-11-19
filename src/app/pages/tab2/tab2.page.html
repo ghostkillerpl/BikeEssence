@@ -1,35 +1,33 @@
 <ion-content>  
   <ion-list class="bg-transparent">
 
-    <ion-item-divider>
+    <ion-item-divider class="padding">
       <ion-label>
-        <h4>LISTA TRAS</h4>
+        <h4>STATYSTYKI PRZEJAZDÓW</h4>
       </ion-label>
     </ion-item-divider>
-
-    <ion-item (click)="Bolko()">
-      <ion-label class="ion-text-wrap">
-        <ion-text color="secondary">
-          <h3>Trasa bolko</h3>
-        </ion-text>
-        <ion-text>  
-          <p style="padding-bottom: 5px; padding-top: 5px;">Poziom trudności trasy ★✩✩✩✩</p>
-  
-          <p>Opis trasy: Trasa wiodąca wokół ciekawych zalesionych terenów z dala od miasta, celem przejazdu jest dojechanie na Kamionke Bolko, satysfakcjonujące widoki oraz czyste powietrze.</p>
-        </ion-text>
-      </ion-label>
+    
+    <ion-item class="no-border">
+      <ion-text class="ion-text-center">
+        <h3>Witaj Jan!</h3>
+      </ion-text>
+      <ion-icon name="person-add" style="margin: auto; font-size: 100px;"></ion-icon>
     </ion-item>
 
-    <ion-item href="">
-      <ion-label class="ion-text-wrap">
-        <ion-text color="secondary">
-          <h3>Dodać trase</h3>
-        </ion-text>
-        <ion-text>
-          <p style="text-align: justify; padding-left: 5px; padding-right: 70px;" >-------------------------</p>
-        </ion-text>
-      </ion-label>
-    </ion-item>
+
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center ibox2">
+          <h3>Średnia prędkość: 21 km/h</h3>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center ibox2">
+          <h3>Przejechane kilometry: 19km</h3>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center ibox2">
+          <h3>Ukończone trasy: 7</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
   
   </ion-list>

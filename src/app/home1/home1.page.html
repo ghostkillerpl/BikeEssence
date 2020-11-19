@@ -4,19 +4,36 @@
           <ion-menu-button autoHide="false" menuToggle></ion-menu-button>
         </ion-buttons>
       <ion-title>
-       BikeEssence
+       <p>BikeEssence</p>
       </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1_XM9HijQ5qjPiFXB6iHpHPwLCdyuItGj" width="640" height="500"></iframe>
+<!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1_XM9HijQ5qjPiFXB6iHpHPwLCdyuItGj" width="640" height="500"></iframe> -->
 
 <ion-content>
 
-      <div text-center margin-top style="margin-top: 9%;">
-        <ion-text margin text-center tappable (click)="Tabs()" color="primary" style="border-bottom: solid #596063 2px; padding: 6px; font-size: 15px;">
-          <strong><ion-icon size="default" name="home"></ion-icon>Powrót do strony głownej</strong>
-        </ion-text>
-      </div>
+  <div #map id="map"></div>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button fill="outline" tappable (click)="startTracking()" *ngIf="!isTracking" color="primary"><ion-icon name="locate" style="margin-right: 5px;"></ion-icon>Start</ion-button>
+        <ion-button fill="outline" tappable (click)="stopTracking()" *ngIf="isTracking" color="primary"> <ion-icon name="hand" style="margin-right: 5px;"></ion-icon>Stop</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+<ion-list>
+  <ion-list-header style="justify-content: center; padding: inherit; color:#474787; font-size: 1.4em;">Poprzednie trasy</ion-list-header>
+  <ion-item *ngFor="let route of previousTracks">
+    {{ route.finished | date }}, {{ route.path.length }} Waypointy
+    <ion-button style="margin-left: auto;" fill="outline" tappable (click)="showHistoryRoute(route.path)">Pokaż trasę</ion-button>
+  </ion-item>
+</ion-list>
+
+<ion-grid>
+  <ion-row class="ion-align-items-center"><ion-col size="12" class="ion-text-center"><ion-button fill="outline" tappable (click)="Tabs()" color="primary">Powrót do strony głownej</ion-button></ion-col></ion-row>
+</ion-grid>
 
 </ion-content>

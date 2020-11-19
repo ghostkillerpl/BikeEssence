@@ -1,15 +1,16 @@
 <ion-app>
+
   <ion-menu side="start" type="push" contentId="content1">
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title>Menu</ion-title>
+          <ion-title (click)="toggleMenu()" [routerLink]="['/tabs']" >Menu<img class="img-side-menu" src="assets/img/logo.png" style="height: 50px"></ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="light-grey">
         <ion-list>
-          <ion-item (click)="toggleMenu()" [routerLink]="['/dashboard']" routerLinkActive="active-link"><ion-icon slot="end" name="contact"></ion-icon>Moje konto</ion-item>
-          <ion-item (click)="toggleMenu()" [routerLink]="['/dashboard']" routerLinkActive="active-link"><ion-icon slot="end" name="notifications"></ion-icon>Powiadomienia</ion-item>
-          <ion-item (click)="toggleMenu()" [routerLink]="['/dashboard']" routerLinkActive="active-link"><ion-icon slot="end" name="bicycle"></ion-icon>Aktywność</ion-item>
+          <ion-item (click)="toggleMenu()" [routerLink]="['/user']" routerLinkActive="active-link"><ion-icon slot="end" name="contact"></ion-icon>Moje konto</ion-item>
+          <ion-item (click)="toggleMenu()" [routerLink]="['/information']" routerLinkActive="active-link"><ion-icon slot="end" name="information-circle"></ion-icon>Informacje</ion-item>
+          <ion-item (click)="toggleMenu()" [routerLink]="['/settings']" routerLinkActive="active-link"><ion-icon slot="end" name="settings"></ion-icon>Ustawienia</ion-item>
           <ion-item (click)="toggleMenu()" [routerLink]="['/dashboard']" routerLinkActive="active-link"><ion-icon slot="end" name="bookmark"></ion-icon>Osiągniecia</ion-item>
           <ion-item (click)="toggleMenu()" [routerLink]="['/dashboard']" routerLinkActive="active-link"><ion-icon slot="end" name="star"></ion-icon>Ulubione trasy</ion-item>
           <ion-item (click)="toggleMenu()" [routerLink]="['']" routerLinkActive="active-link"><ion-icon slot="end" name="md-log-out"></ion-icon>Wyloguj</ion-item>
@@ -17,4 +18,5 @@
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="content1" main></ion-router-outlet>
+
 </ion-app>

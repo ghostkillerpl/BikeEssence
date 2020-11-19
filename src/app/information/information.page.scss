@@ -1,0 +1,30 @@
+ion-content {
+    --background: url('/assets/img/tło.png') 0 0/100% 100% no-repeat;
+    
+  }
+  .bg-transparent {
+    background: transparent;
+  }
+  ion-item {
+    --background: rgba(0,0,0,0);
+  }
+  h3
+  {
+      color: #474787;
+      font-weight: 700;
+  }
+  p
+  {
+    font-weight: 600;
+  }
+  ion-label{
+    background-color: blur(10px);
+    font-weight: 700;
+  }
+  ion-item-divider{
+    background-color: #474787;
+  }
+  h4{
+    color: white;
+    font-weight: 500;
+  }

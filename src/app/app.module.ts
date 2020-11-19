@@ -14,7 +14,8 @@ import { HttpModule } from '@angular/http';
 import { AuthGuard } from './auth.guard';
 import { RegisterPage } from './register/register.page';
 import { PostProvider } from 'src/providers/post-provider';
-
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+ 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -23,10 +24,12 @@ import { PostProvider } from 'src/providers/post-provider';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, },
+    Geolocation,
     AuthGuard,
     RegisterPage,
     PostProvider
+
   ],
   bootstrap: [AppComponent]
 })

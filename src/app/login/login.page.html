@@ -4,7 +4,7 @@
           <img src="assets/img/logo.png" style="height: 180px">
         </div>
 
-<div class = "padding1" >
+<section class = "section1">
 
   <ion-item>
     <ion-label color= "dark" style="font-weight: 800;" position="floating">Email</ion-label>
@@ -16,16 +16,15 @@
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
-</div>
+</section>
 
-<div class = "padding2" >
+<section class = "section2">
   
   <ion-button color="secondary" expand="full"  fill="outline" shape="round" style=" margin-bottom: 12px;" (click)="loginClick()" ><p>Zaloguj</p></ion-button>
   <ion-button color="secondary" expand="full"  fill="outline" shape="round" style=" margin-bottom: 12px;" (click)="formRegister()"><p>Zarejestruj</p></ion-button>
   <ion-button color="secondary" expand="full"  fill="outline" shape="round" style=" margin-bottom: 12px;" (click)="loginAsGuest()" ><p>Zaloguj jako gość</p></ion-button>
   <ion-button color="secondary" expand="full"  fill="outline" shape="round" style=" margin-bottom: 12px;" (click)="loginWithFacebook()" ><ion-icon slot="end" name="logo-facebook"></ion-icon><p>Zaloguj przez Facebook</p></ion-button>
 
-  
-</div>
+</section>
 
 </ion-content>

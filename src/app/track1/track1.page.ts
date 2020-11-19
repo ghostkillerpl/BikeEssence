@@ -10,11 +10,11 @@ import { filter } from 'rxjs/operators';
 
 declare var google: any;
 @Component({
-  selector: 'app-setting',
-  templateUrl: './setting.page.html',
-  styleUrls: ['./setting.page.scss'],
+  selector: 'app-track1',
+  templateUrl: './track1.page.html',
+  styleUrls: ['./track1.page.scss'],
 })
-export class SettingPage implements OnInit {
+export class Track1Page implements OnInit {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   currentMapTrack = null;
@@ -50,6 +50,12 @@ export class SettingPage implements OnInit {
           let latLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
           this.map.setCenter(latLng);
           this.map.setZoom(16);
+
+          var marker = new google.maps.Marker({
+            position:{lat: 50.643967,lng: 17.939170},
+            map:this.map,
+            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+          })
         }).catch((error) => {
           console.log('Error getting location', error);
         });
@@ -118,4 +124,3 @@ export class SettingPage implements OnInit {
   }
 
 }
-

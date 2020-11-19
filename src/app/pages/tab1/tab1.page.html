@@ -1,135 +1,134 @@
 
 <ion-content>
   <ion-list class="bg-transparent">
+    <ion-list style="background-color: #474787;">    
+      <h4 class="section-header">SKLEPY ROWEROWE</h4>
+      <ion-button fill="outline" class="active" tappable (click)="listwiev()" color="light" style="float: right; margin-right: 12px;"><ion-icon name="list"></ion-icon></ion-button>
+      <ion-button fill="outline" class="active" tappable (click)="tablewiev()" color="light" style="float: right;"><ion-icon name="albums"></ion-icon></ion-button>
+    </ion-list>
 
-    <ion-item-divider>
+    <ion-item class="ibox toggler" href="https://rowery24h.pl/">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="secondary">
+          <h3 class="text-align-to-ibox center">Super Bike Opole</h3>
+        </ion-text>
+        <ion-text>
+          <p class="text-align-to-ibox center">Adres: Rzeszowska 3, 45-316 Opole</p>
+          <p class="text-align-to-ibox center">Telefon:	77 455 19 22</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="ibox toggler" href="http://salonrowerowy.pl/">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="secondary">
+          <h3 class="text-align-to-ibox center">Opolskie Centrum Rowerowe Sp. z o.o.</h3>
+        </ion-text>
+        <ion-text>
+          <p class="text-align-to-ibox center">Adres: Głogowska 23C, 45-315 Opole</p>
+          <p class="text-align-to-ibox center">Telefon: 77 455 17 69</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="ibox toggler" href="https://sport-bike.pl/">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="secondary">
+          <h3 class="text-align-to-ibox center">Sprot-Bike&Ski</h3>
+        </ion-text>
+        <ion-text>
+          <p class="text-align-to-ibox center">Adres: Tysiąclecia 6, 45-462 Opole </p>
+          <p class="text-align-to-ibox center">Telefon: 77 455 23 63</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="ibox toggler" href="http://rovet.pl/">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="secondary">
+          <h3 class="text-align-to-ibox center">Rovet</h3>
+        </ion-text>
+        <ion-text>
+          <p class="text-align-to-ibox center">Adres: Fabryczna 1, 46-020 Opole</p>
+          <p class="text-align-to-ibox center">Telefon:	77 441 27 51</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="ibox toggler" href="http://www.roweryokey.pl/">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="secondary">
+          <h3 class="text-align-to-ibox center">Roweryokey</h3>
+        </ion-text>
+        <ion-text>
+          <p class="text-align-to-ibox center">Adres: Augustyna Kośnego 41, 46-020 Opole</p>
+          <p class="text-align-to-ibox center">Telefon: 77 453 70 50</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item-divider class="padding">
       <ion-label>
-        <h4>SKLEPY ROWEROWE</h4>
+        <h4 class="section-header">SERWISY ROWEROWE</h4>
       </ion-label>
     </ion-item-divider>
 
-    <ion-item href="https://rowery24h.pl/">
-      <ion-label class="ion-text-wrap">
-        <ion-text color="secondary">
-          <h3>Super Bike Opole</h3>
-        </ion-text>
-        <ion-text>
-          <p>Adres: Rzeszowska 3, 45-316 Opole</p>
-          <p>Telefon:	77 455 19 22</p>
-        </ion-text>
-      </ion-label>
-    </ion-item>
-
-    <ion-item href="http://salonrowerowy.pl/">
-      <ion-label class="ion-text-wrap">
-        <ion-text color="secondary">
-          <h3>Opolskie Centrum Rowerowe Sp. z o.o.</h3>
-        </ion-text>
-        <ion-text>
-          <p>Adres: Głogowska 23C, 45-315 Opole</p>
-          <p>Telefon: 77 455 17 69</p>
-        </ion-text>
-      </ion-label>
-    </ion-item>
-
-    <ion-item href="https://sport-bike.pl/">
-      <ion-label class="ion-text-wrap">
-        <ion-text color="secondary">
-          <h3>Sprot-Bike&Ski</h3>
-        </ion-text>
-        <ion-text>
-          <p>Adres: Tysiąclecia 6, 45-462 Opole </p>
-          <p>Telefon: 77 455 23 63</p>
-        </ion-text>
-      </ion-label>
-    </ion-item>
-
-    <ion-item href="http://rovet.pl/">
-      <ion-label class="ion-text-wrap">
-        <ion-text color="secondary">
-          <h3>Rovet</h3>
-        </ion-text>
-        <ion-text>
-          <p>Adres: Fabryczna 1, 46-020 Opole</p>
-          <p>Telefon:	77 441 27 51</p>
-        </ion-text>
-      </ion-label>
-    </ion-item>
-
-    <ion-item href="http://www.roweryokey.pl/">
-      <ion-label class="ion-text-wrap">
-        <ion-text color="secondary">
-          <h3>Roweryokey</h3>
-        </ion-text>
-        <ion-text>
-          <p>Adres: Augustyna Kośnego 41, 46-020 Opole</p>
-          <p>Telefon: 77 453 70 50</p>
-        </ion-text>
-      </ion-label>
-    </ion-item>
-
-    <ion-item-divider>
-      <ion-label>
-        <h4>SERWISY ROWEROWE</h4>
-      </ion-label>
-    </ion-item-divider>
-
-      <ion-item href="https://bikeopole.pl/">
+      <ion-item class="ibox toggler" href="https://bikeopole.pl/">
         <ion-label class="ion-text-wrap">
           <ion-text color="secondary">
-            <h3>Super Bike Opole</h3>
+            <h3 class="text-align-to-ibox center">Super Bike Opole</h3>
           </ion-text>
           <ion-text>
-            <p>Adres: Rzeszowska 3, 45-316 Opole</p>
-            <p>Telefon:	77 455 19 22</p>
+            <p class="text-align-to-ibox center">Adres: Rzeszowska 3, 45-316 Opole</p>
+            <p class="text-align-to-ibox center">Telefon:	77 455 19 22</p>
           </ion-text>
         </ion-label>
       </ion-item>
   
-      <ion-item href="https://www.rove.pl/">
+      <ion-item class="ibox toggler" href="https://www.rove.pl/">
         <ion-label class="ion-text-wrap">
           <ion-text color="secondary">
-            <h3>TOMASZ WYSOCKI ROVE</h3>
+            <h3 class="text-align-to-ibox center">TOMASZ WYSOCKI ROVE</h3>
           </ion-text>
           <ion-text>
-            <p>Niemodlińska 75, 45-864 Opole</p>
-            <p>+48 (77) 453 74 58</p>
+            <p class="text-align-to-ibox center">Niemodlińska 75, 45-864 Opole</p>
+            <p class="text-align-to-ibox center">+48 (77) 453 74 58</p>
           </ion-text>
         </ion-label>
       </ion-item>
   
-      <ion-item href="http://www.interower.pl/">
+      <ion-item class="ibox toggler" href="http://www.interower.pl/">
         <ion-label class="ion-text-wrap">
           <ion-text color="secondary">
-            <h3>Interrower</h3>
+            <h3 class="text-align-to-ibox center">Interrower</h3>
           </ion-text>
           <ion-text>
-            <p>Adres: Horoszkiewicza 2a, 45-301 Opole</p>
-            <p>Telefon: 77 455 38 79</p>
+            <p class="text-align-to-ibox center">Adres: Horoszkiewicza 2a, 45-301 Opole</p>
+            <p class="text-align-to-ibox center">Telefon: 77 455 38 79</p>
           </ion-text>
         </ion-label>
       </ion-item>
   
-      <ion-item href="www.cyklofan.pl">
+      <ion-item class="ibox toggler" href="www.cyklofan.pl">
         <ion-label class="ion-text-wrap">
           <ion-text color="secondary">
-            <h3>CykloFan</h3>
+            <h3 class="text-align-to-ibox center">CykloFan</h3>
           </ion-text>
           <ion-text>
-            <p>Adres: św. Sebastiana 5 oficyna, 45-030 Opole</p>
-            <p>Telefon:	77 453 91 79</p>
+            <p class="text-align-to-ibox center">Adres: św. Sebastiana 5 oficyna, 45-030 Opole</p>
+            <p class="text-align-to-ibox center">Telefon:	77 453 91 79</p>
           </ion-text>
         </ion-label>
       </ion-item>
   
-      <ion-item href="http://www.roweryokey.pl/">
+      <ion-item class="ibox toggler" href="http://www.roweryokey.pl/">
         <ion-label class="ion-text-wrap">
           <ion-text color="secondary">
-            <h3>Roweryokey</h3>
+            <h3 class="text-align-to-ibox center">Roweryokey</h3>
           </ion-text>
           <ion-text>
-            <p>Adres: Kośnego 41, 45-056 Opole</p>
-            <p>Telefon: 77 453 70 50</p>
+            <p class="text-align-to-ibox center">Adres: Kośnego 41, 45-056 Opole</p>
+            <p class="text-align-to-ibox center">Telefon: 77 453 70 50</p>
           </ion-text>
         </ion-label>
       </ion-item>
